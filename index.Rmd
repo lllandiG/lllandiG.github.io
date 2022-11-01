@@ -10,5 +10,5 @@ output:
 
 This is Landi, a first year MS Biostats student at Columbia University.
 
-This is my cat Amber with Halloween costume.
+This is my cat Amber who couldn't lick herself with this Halloween costume on.
 ![](images/halloween.jpg)
