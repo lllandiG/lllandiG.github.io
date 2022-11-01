@@ -1,12 +1,12 @@
 ---
-title: "Instacart Dashboard"
+title: "RestaurantInspect Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+    vertical_layout: scroll
     source_code: embed
+    theme: bootstrap
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +25,7 @@ rest_inspec =
   as_tibble(rest_inspec)
 ```
 
-
+Column {data-width=650}
 -------------------------------------------------------------------------------
 
 ### Chart 1
@@ -38,9 +38,13 @@ rest_inspec %>%
    plot_ly(
     y = ~score, color = ~boro,
     type = "box", colors = "viridis") %>%
-  layout(title = "Score distribution in each boro")
+  layout(title = "Score distributions in each boro")
 
 ```
+
+---------------------------------------------------------
+
+### Chart 2
 
 ```{r}
 rest_inspec %>%
