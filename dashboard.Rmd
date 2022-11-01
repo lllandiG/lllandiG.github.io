@@ -5,6 +5,8 @@ output:
     orientation: columns
     vertical_layout: fill
     source_code: embed
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -13,4 +15,31 @@ library(p8105.datasets)
 library(flexdashboard)
 library(plotly)
 ```
+
+
+```{r, include=FALSE}
+data("rest_inspec")
+
+rest_inspec = 
+  rest_inspec %>% 
+  as_tibble(rest_inspec)
+```
+
+
+-------------------------------------------------------------------------------
+
+### Chart 1
+
+```{r}
+rest_inspec %>%
+  sample_n(5000) %>%
+  filter(boro != "Missing") %>%
+  mutate(boro = fct_reorder(boro, score)) %>%
+   plot_ly(
+    y = ~score, color = ~boro,
+    type = "box", colors = "viridis") %>%
+  layout(title = "Score distribution in each boro")
+
+```
+
 
