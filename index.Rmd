@@ -1,0 +1,14 @@
+---
+title: "Landi's Personal Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Introductory Page
+
+This is Landi, a first year MS Biostats student at Columbia University.
+
+This is my cat Amber with Halloween costume.
+![](images/halloween.jpg)
