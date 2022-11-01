@@ -1,34 +1,9 @@
 ---
-title: ""
+title: "About this website"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-### Education
-
-**University of California, San Diego (UCSD), CA [Sep 2018 - Jun 2022]{style="float:right"}** \
-*Bachelor of Science in Biology with Specs in Bioinformatics*
-
-<br>
-
-### Research Experience
-
-**Zorrilla Lab, Scripps Research Institute, CA [Sep 2021 - Mar 2022]{style="float:right"}** 
-
-- Participate in the lab’s ongoing project, *Characterization of the Genetic and Neural Bases of Psychiatric and Obesity-related Disorders*, and acquire essential programming skills.
-
-- Develop an understanding of the common machine learning algorithm manipulations in DNA datasets from patients and practice Random Forest to select predictors.
-
-<br>
-
-### Skills and Languages
-
-- Python
-- JavaScript
-- C++
-
-Intermediate Level in Matlab, Linux commands, R.
-
-
+This website is made in rmarkdown
