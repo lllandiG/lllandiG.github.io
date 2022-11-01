@@ -42,4 +42,26 @@ rest_inspec %>%
 
 ```
 
+```{r}
+rest_inspec %>%
+  filter(boro == "MANHATTAN") %>%
+  group_by(cuisine_description) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count)) %>%
+  head(10) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, count)) %>%
+  mutate(cuisine_description = fct_rev(cuisine_description)) %>%
+  mutate(cuisine_description = recode(cuisine_description, "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin")) %>%
+  plot_ly(
+    x = ~cuisine_description,
+    y = ~count,
+    color = ~cuisine_description,
+    type = "bar", colors = "viridis"
+  ) %>%
+  layout(title = "Cuisines with most restaurants in Manhattan", xaxis = list(title = "Cuisine"))
+```
+
+```{r}
+head(rest_inspec)
+```
 
