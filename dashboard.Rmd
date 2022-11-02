@@ -9,7 +9,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(flexdashboard)
@@ -17,7 +17,7 @@ library(plotly)
 ```
 
 
-```{r, include=FALSE}
+```{r, include = FALSE}
 data("rest_inspec")
 
 rest_inspec = 
@@ -25,8 +25,6 @@ rest_inspec =
   as_tibble(rest_inspec)
 ```
 
-Column {data-width=650}
--------------------------------------------------------------------------------
 
 ### Chart 1
 
@@ -42,7 +40,6 @@ rest_inspec %>%
 
 ```
 
----------------------------------------------------------
 
 ### Chart 2
 
@@ -65,7 +62,17 @@ rest_inspec %>%
   layout(title = "Cuisines with most restaurants in Manhattan", xaxis = list(title = "Cuisine"))
 ```
 
+
+### Chart 3
+
 ```{r}
-head(rest_inspec)
+rest_inspec %>%
+  filter(boro == "MANHATTAN", cuisine_description == "American") %>%
+  sample_n(2000) %>%
+  plot_ly(
+    x = ~score,
+    type = "histogram"
+  ) %>%
+  layout(title = "Score of American cuisine in Manhattan")
 ```
 
