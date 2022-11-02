@@ -26,8 +26,7 @@ rest_inspec =
 ```
 
 
-### Chart 1
-
+### Chart 1, Sampled 5000 from the original dataset.
 ```{r}
 rest_inspec %>%
   sample_n(5000) %>%
@@ -63,8 +62,7 @@ rest_inspec %>%
 ```
 
 
-### Chart 3
-
+### Chart 3, Sampled 2000 from the original dataset.
 ```{r}
 rest_inspec %>%
   filter(boro == "MANHATTAN", cuisine_description == "American") %>%
